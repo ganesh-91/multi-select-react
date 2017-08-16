@@ -2,7 +2,7 @@
     margin: 0 5px;
     display: inline-block;
     cursor: pointer;
-    float: right;
+    /* float: right; */
     font-size: 12px;
 }
 
@@ -14,15 +14,15 @@
     height: 200px;
     overflow-x: auto;
     background-color: #fff;
-    position: absolute;
+    /* position: absolute; */
     margin: 0;
     border: 1px solid #ccc;
     border-radius: 4px;
     border-top-width: 0;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
-    /*width: calc( 100% - 2px);*/
-    width: inherit;
+    width: 100%;
+    /* width: inherit; */
     padding: 0;
     display: none;
     box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.2);
@@ -51,18 +51,19 @@
     height: inherit;
     border: 1px solid #ccc;
     border-radius: 4px;
-    display: table-cell;
     padding: 0 0 0 10px;
 }
 
 .multi-select .selected-options .selected-options-badges-list {
+    display: inline-block;
+    /* float: left; */
+    width: calc(100% - 30px);
+    padding: 2px 0;
     font-weight: 400;
     margin: 0;
     text-align: left;
-    line-height: 1;
+    line-height: 1.4;
     vertical-align: middle;
-    display: inline-block;
-    width: 256px;
     white-space: nowrap;
     overflow: hidden;
 }
@@ -77,7 +78,7 @@
 .multi-select {
     background-color: #fff;
     border-radius: 4px;
-    width: 290px;
+    width: 100%;
     outline: none;
     display: inline-block;
     height: 28px;
