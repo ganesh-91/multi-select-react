@@ -8,6 +8,9 @@ A React Component providing multi select functionality.(under development)
 ```
 npm install multi-select-react
 ```
+----
+## Demo
+[Multi-select-react](https://ganesh-91.github.io/multi-select-react/)
 
 ----
 ## 1. Basic Usage
