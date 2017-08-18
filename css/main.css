@@ -1,0 +1,1054 @@
+/*! HTML5 Boilerplate v5.0.0 | MIT License | http://h5bp.com/ */
+/*
+Template Name: comingwa
+Author: Riyad
+Version: 1.0.0
+
+ */
+/**
+ * ============================================================================
+ * Table of Contents
+ * -----------------------------------------------------------------------
+ * #Base styles: opinionated defaults
+ * #Author Custom Style
+ *      1.Author Custom Global Style
+ *         2.Intro Section
+ *         2.1.FullScreen Image
+ *         2.2.Intro Content
+ *         2.2.1.Logo
+ *         2.2.2.Intro Main Heading
+ *         2.2.3.Countdown
+ *         2.2.4.Intro Sub Heading
+ *         2.2.5.Trigger Button with SVG
+ *         2.2.6.Social Links                
+ *         3.Trigger After Content
+ *         3.1.Trigger Notify
+ *         3.2.Our Service
+ *         3.3.Our Awesome Team
+ *         3.4.Contact Form
+ *         3.5.Google Map
+ *         3.6.Footer         
+ *     #Helper classes
+ *     #Responsive Style
+ *     #Screen loader
+ *     #Preloader
+ *    
+ * ============================================================================
+ */
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+html {
+    color: #222;
+    font-size: 1em;
+    line-height: 1.4;
+}
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+/*
+ * A better looking default horizontal rule
+ */
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+audio,
+canvas,
+iframe,
+img,
+svg,
+video { vertical-align: middle }
+/*
+ * Remove default fieldset styles.
+ */
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+/*
+ * Allow only vertical resizing of textareas.
+ */
+textarea { resize: vertical }
+/* ==========================================================================
+   Browser Upgrade Prompt
+   ========================================================================== */
+.browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+/* 
+* ==========================================================================
+   Author's custom styles
+  ================= 1.Author Custom Global Style ===========================
+* ========================================================================== 
+*/
+@font-face {
+    font-family: 'BeonMedium';
+    src: url('../fonts/beon-webfont.eot');
+    src: local('☺'), url('../fonts/beon-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/beon-webfont.woff') format('woff'), url('../fonts/beon-webfont.ttf') format('truetype'), url('../fonts/beon-webfont.svg#BeonMedium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'latobold';
+    src: url('../fonts/Lato-Bold-webfont.eot');
+    src: url('../fonts/Lato-Bold-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/Lato-Bold-webfont.woff2') format('woff2'), url('../fonts/Lato-Bold-webfont.woff') format('woff'), url('../fonts/Lato-Bold-webfont.ttf') format('truetype'), url('../fonts/Lato-Bold-webfont.svg#latobold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'latolight';
+    src: url('../fonts/Lato-Light-webfont.eot');
+    src: url('../fonts/Lato-Light-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/Lato-Light-webfont.woff2') format('woff2'), url('../fonts/Lato-Light-webfont.woff') format('woff'), url('../fonts/Lato-Light-webfont.ttf') format('truetype'), url('../fonts/Lato-Light-webfont.svg#latolight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'latoregular';
+    src: url('../fonts/Lato-Regular-webfont.eot');
+    src: url('../fonts/Lato-Regular-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/Lato-Regular-webfont.woff2') format('woff2'), url('../fonts/Lato-Regular-webfont.woff') format('woff'), url('../fonts/Lato-Regular-webfont.ttf') format('truetype'), url('../fonts/Lato-Regular-webfont.svg#latoregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'open_sanslight';
+    src: url('../fonts/OpenSans-Light-webfont.eot');
+    src: url('../fonts/OpenSans-Light-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/OpenSans-Light-webfont.woff') format('woff'), url('../fonts/OpenSans-Light-webfont.ttf') format('truetype'), url('../fonts/OpenSans-Light-webfont.svg#open_sanslight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+html,
+body {
+    width: 100%;
+    height: 100%;
+    font-family: OpenSans Light, sans-serif;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 { font-weight: normal }
+h2 {
+    font-family: latoregular;
+    font-size: 1.5em;
+    text-transform: capitalize;
+}
+img {
+    width: 100%;
+    height: auto;
+}
+ul { list-style: none }
+a { text-decoration: none }
+.padding-big { padding: 60px 0 }
+p {
+    color: #787878;
+    font-family: Open_sanslight;
+}
+#container {
+    margin: 0;
+    padding: 0;
+}
+.title {
+    color: #2098f5;
+    font-family: latobold;
+    font-size: 2em;
+    text-transform: uppercase;
+    position: relative;
+    display: table;
+    margin: 0 auto;
+}
+.title::before {
+    background: none repeat scroll 0 0 #ddd;
+    content: "";
+    height: 2px;
+    left: 25%;
+    position: absolute;
+    top: -8px;
+    width: 50%;
+}
+.title::after {
+    background: none repeat scroll 0 0 #ddd;
+    content: "";
+    height: 2px;
+    left: 25%;
+    position: absolute;
+    bottom: -8px;
+    width: 50%;
+}
+.title-tag {
+    font-family: open_sanslight;
+    font-size: 1.1em;
+    padding: 10px 0 20px 0;
+}
+.padding-2x { padding: 60px 0 }
+.padding-x { padding: 20px 0 }
+.padding-top-2x { padding-top: 60px }
+.padding-top-x { padding-top: 20px }
+.padding-btm-2x { padding-bottom: 60px }
+.padding-btm-x { padding-bottom: 20px }
+.margin-2x { margin: 60px 0 }
+.margin-x { margin: 20px 0 }
+.margin-top-2x { margin-top: 60px }
+.margin-top-x { margin-top: 20px }
+.margin-btm-2x { margin-bottom: 60px }
+.margin-btm-x { margin-bottom: 20px }
+/* 
+* ==========================================================================
+    =========+++++++++++++++ 2.Intro Section +++++++++++++++=============
+* ==========================================================================
+*/
+.center-content {
+    display: table;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+.intro {
+    background-image: url(../img/background.jpg); /* Fullscreen Background Image */
+    background-size: cover;
+    background-position: center;
+    background-color: #2a2e39;
+    position: fixed;
+    z-index: 10;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    -webkit-transition: -webkit-transform 0.6s;
+    transition: transform 0.6s;
+    -webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+    transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+}
+.container-open .intro {
+    -webkit-transform: translate3d(0, -100%, 0) translate3d(0, 200px, 0);
+    transform: translate3d(0, -100%, 0) translate3d(0, 200px, 0);
+}
+/* 
+* ==========================================================================
+        2.1.FullScreen Image
+* ========================================================================== 
+*/
+.intro-image {
+    background-color: rgba(0,0,0,0.7);
+    position: absolute;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 120%;
+    width: auto;
+    height: auto;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-transition: -webkit-transform 0.6s, opacity 0.6s;
+    transition: transform 0.6s, opacity 0.6s;
+    -webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+    transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+}
+.container-open .intro-image {
+    background-color: #2a2e39;
+    -webkit-transform: translate3d(0, 20%, 0);
+    transform: translate3d(0, 20%, 0);
+}
+/* 
+* ==========================================================================
+                +++++++++++++++ 2.2.Intro Content +++++++++++++++
+* ========================================================================== 
+*/
+.intro-content {
+    display: table-cell;
+    font-size: 1.15em;
+    margin: 0;
+    padding: 0;
+    min-width: 100%;
+    min-height: 100%;
+    vertical-align: middle;
+}
+/* 
+* ==========================================================================
+        2.2.1.Logo
+* ==========================================================================
+*/
+.logo {
+    width: 100%;
+    margin: -30px 0 25px;
+}
+.logo img {
+    width: 200px;
+    height: auto;
+}
+.text-logo {
+    color: #2098f5;
+    font-family: BeonMedium;
+    font-weight: bold;
+    font-size: 3em;
+}
+/* 
+* ==========================================================================
+        2.2.2.Intro Main Heading
+* ========================================================================== 
+*/
+.intro-title {
+    font-family: latobold;
+    font-size: 3em;
+    font-weight: normal;
+    margin: 15px 0;
+    text-transform: uppercase;
+}
+.obak { color: #2098f5 }
+/* 
+* ==========================================================================
+        2.2.3.Countdown
+* ========================================================================== 
+*/
+.countdown {
+    list-style: none;
+    margin: 20px 0;
+    padding: 0;
+    display: block;
+    text-align: center;
+    font-family: BeonMedium;
+}
+.countdown li { display: inline-block }
+.countdown li span {
+    font-size: 80px;
+    font-weight: 300;
+    line-height: 80px;
+}
+.countdown li.seperator {
+    font-size: 14px;
+    margin-top: 12px;
+    line-height: 30px;
+    vertical-align: top;
+}
+.countdown li p {
+    color: #ddd;
+    font-size: 14px;
+}
+a {
+    color: #76949F;
+    text-decoration: none;
+}
+a:hover { text-decoration: underline }
+.content-div { width: 100% }
+/* 
+* ==========================================================================
+        2.2.4.Intro Sub Heading
+* ========================================================================== 
+*/
+.intro-subtitle {
+    display: block;
+    -webkit-align-items: center;
+    align-items: center;
+    text-align: center;
+}
+.intro-subtitle p { color: #efefef }
+.intro_description {
+    margin: 0 auto 0 1em;
+    line-height: 1.2;
+}
+/* 
+* ==========================================================================
+        2.2.5.Trigger Button with SVG
+* ========================================================================== 
+*/
+.trigger {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: medium none;
+    bottom: 0;
+    height: 40px;
+    margin: 10px;
+    outline: medium none;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    width: 40px;
+}
+/* Hide the text */
+.trigger span {
+    position: absolute;
+    top: 100%;
+}
+.icon rect,
+.icon line {
+    stroke: #2098f5;
+    fill: #2098f5;
+    stroke-width: 2px;
+}
+.icon {
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+    transition: opacity 0.3s, transform 0.3s;
+}
+/* Hide grid and show cross when opening */
+.icon-cross,
+.trigger-active .icon-grid {
+    opacity: 0;
+    -webkit-transform: scale3d(0.5, 0.5, 1);
+    transform: scale3d(0.5, 0.5, 1);
+}
+.trigger-active .icon-cross {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+}
+/* 
+* ==========================================================================
+        2.2.6.Social Links
+* ========================================================================== 
+*/
+.social {
+    bottom: 0;
+    left: 0;
+    margin: 10px;
+    position: absolute;
+}
+.fa-social {
+    background: #2098f5;
+    border: 0px solid #2098f5;
+    color: rgb(255, 255, 255);
+    height: 42px;
+    line-height: 45px;
+    text-align: center;
+    width: 42px;
+}
+.fa-social:hover {
+    color: #2098f5;
+    background: #fff;
+}
+/* 
+* ==========================================================================
+*     =======+++++++++++++++ 3.Trigger After Content +++++++++++++++========
+* ========================================================================== 
+*/
+.content-wrapper {
+    position: relative;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding: 250px 0 0;
+    background-color: #F0F1F5;
+    overflow: hidden;
+}
+.content-wrapper::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #2a2e39;
+    content: '';
+    opacity: 1;
+    -webkit-transition: opacity 0.6s;
+    transition: opacity 0.6s;
+    -webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+    transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+    pointer-events: none;
+}
+.container-open .content-wrapper::after { opacity: 0 }
+/* 
+* ==========================================================================
+        3.1.Trigger Notify
+* ========================================================================== 
+*/
+.container-open .center-content { opacity: 0 }
+.notify-after { visibility: hidden }
+.container-open .notify-after {
+    visibility: visible;
+    position: absolute;
+    bottom: 0;
+    left: 40%;
+}
+.subscribe-form { width: 100% }
+.input-notify-after {
+    width: 80% !important;
+    float: left;
+    background: transparent;
+    border-right: none;
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+}
+.btn-notify-after {
+    width: 20% !important;
+    float: left;
+    color: #ddd;
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+    margin-left: -4px;
+    background: transparent;
+}
+.btn-notify-after:hover,
+.btn-notify-after:focus,
+.btn-notify-after:active {
+    background: #2098f5;
+    color: #fff;
+    border-color: #2098f5;
+}
+/* 
+* ==========================================================================
+        3.2.Our Service
+* ========================================================================== 
+*/
+.fa-service {
+    border: 1px solid #2098f5;
+    color: #2098f5;
+    font-size: 2em !important;
+    height: 40px;
+    line-height: 40px !important;
+    text-align: center;
+    width: 40px;
+}
+.service-title { color: #2098f5 }
+.fa-mbr { padding: 0 5px }
+.fa-mbr:hover { color: #31B0E0 }
+/* 
+* ==========================================================================
+        3.3.Our Awesome Team
+* ========================================================================== 
+*/
+.team-member {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px 0;
+    margin: 10px 0;
+}
+.team-member h2 {
+    color: #585858;
+    font-family: latolight;
+    font-size: 1.2em;
+}
+.member-img {
+    display: table;
+    height: 200px;
+    margin: 0 auto;
+    width: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+/* 
+* ==========================================================================
+        3.4.Contact Form
+* ========================================================================== 
+*/
+.contact {
+    background-color: #2098f5;
+    color: #fff;
+}
+.contact-title { color: #fff }
+.contact-tag { color: #fff }
+#contact-form .form-group label {
+    display: none;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 100;
+    text-transform: uppercase;
+}
+#contact-form.no-placeholder .form-group label { display: block }
+#contact-form .controls {
+    padding: 0;
+    margin-top: 40px;
+}
+#contact-form.no-placeholder .controls { margin-top: 0 }
+#contact-form .form-control {
+    display: inline;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #fff;
+    border-radius: 0;
+    outline: none;
+    box-shadow: 0 0 0 rgba(0,0,0,0.05);
+    height: 52px;
+    font-size: 18px;
+    line-height: 32px;
+    color: #fff;
+    font-weight: 400;
+    padding-left: 38px;
+    vertical-align: top;
+}
+#contact-form .form-group.half-width {
+    width: 40%;
+    float: left;
+}
+#contact-form .form-group { position: relative }
+#contact-form .form-group [class*=fa] {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 5px;
+    color: #eee;
+    font-size: 24px;
+    line-height: 52px;
+    text-align: center;
+    font-weight: 300;
+    -webkit-transition: color .3s ease-out;
+    transition: color .3s ease-out;
+}
+#contact-form .form-group [class*=fa].active { color: #ccc }
+#contact-form.no-placeholder .form-group [class*=fa] { top: 30px }
+#contact-form textarea.form-control {
+    height: auto;
+    max-width: 100%;
+    min-width: 100%;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+    padding-top: 14px;
+    vertical-align: top;
+}
+#contact-form .form-control:focus {
+    outline: none;
+    box-shadow: 0 0 0 rgba(0,0,0,0.05);
+}
+#contact-form .error-message {
+    padding: 5px 0;
+    position: absolute;
+    top: -35px;
+    right: 0;
+    font-size: 15px;
+    line-height: 24px;
+    font-weight: 400;
+    color: #ff3345;
+    z-index: 10;
+}
+#contact-form.no-placeholder .error-message { top: 0 }
+.form-control::-moz-placeholder {
+    color: #ddd;
+    opacity: 1;
+}
+.form-control::-webkit-input-placeholder {
+    color: #ddd;
+    opacity: 1;
+}
+.form-control::-ms-input-placeholder {
+    color: #ddd;
+    opacity: 1;
+}
+.btn-contact {
+    background-color: #2080f5;
+    border-color: #2080f5;
+    color: #fff !important;
+    margin: 30px 0 0;
+    padding: 12px 0;
+}
+.btn-contact:hover {
+    border: 1px solid #fff;
+    background-color: transparent;
+}
+/* 
+* ==========================================================================
+        3.5.Google Map
+* ========================================================================== 
+*/
+#map-wrapper { height: 440px }
+/* 
+* ==========================================================================
+        3.6.Footer
+* ========================================================================== 
+*/
+#footer {
+    background-color: #2098f5;
+    padding: 20px 0;
+    overflow: hidden;
+}
+.copyright p {
+    color: #fff;
+    display: block;
+    padding-top: 25px;
+    font-size: 1.1em;
+}
+/* 
+* ==========================================================================
+       Helper classes
+* ========================================================================== 
+*/
+/*
+ * Hide visually and from screen readers:
+ * http://juicystudio.com/article/screen-readers-display-none.php
+ */
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+/*
+ * Hide only visually, but have it available for screen readers:
+ * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ */
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+/*
+ * Extends the .visuallyhidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+.invisible { visibility: hidden }
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+.clearfix:after { clear: both }
+/* 
+* ==========================================================================
+    Responsive Design
+* ========================================================================== 
+*/
+@media only screen and (max-width: 767px) { 
+    .text-justify { text-align: center }
+}
+
+@media only screen and (max-width: 480px) { 
+    /* body{background:#69C238} */
+    .intro { position: absolute }
+    .logo { margin: -55px 0 25px }
+    .text-logo {
+        font-size: 2em;
+        margin: 0;
+    }
+    .intro-title {
+        font-size: 1.5em;
+        margin: 8px 0;
+    }
+    .fa-clock-spin { font-size: 1.5em !important }
+    .countdown { margin: -18px 0 0 }
+    .countdown li span { font-size: 3em }
+    .countdown li p { margin: -15px 0 5px }
+    .countdown li.seperator {
+        font-size: 9px;
+        line-height: normal;
+        margin-top: 28px;
+        vertical-align: top;
+    }
+    .container-open .notify-after {
+        bottom: 60px;
+        left: 22%;
+    }
+    .notify-after .form-group { float: left }
+}
+@media only screen and (max-width: 304px) { 
+    /* body{background:#69C238} */
+    .intro { position: absolute }
+    .container-open .notify-after {
+        bottom: 60px;
+        left: 5%;
+    }
+}
+@media only screen and (max-width: 320px) { 
+    .intro { position: absolute }
+    .text-logo {
+        font-size: 3em;
+        margin: 0;
+    }
+    .intro-title {
+        font-size: 1.3em;
+        margin: 5px 0 10px;
+    }
+    .fa-clock-spin { font-size: 2em !important }
+    .countdown { margin: -10px 0 10px }
+    .countdown li span { font-size: 3em }
+    .countdown li p { margin: -15px 0 5px }
+    .countdown li.seperator {
+        font-size: 9px;
+        line-height: normal;
+        margin-top: 28px;
+        vertical-align: top;
+    }
+    .container-open .notify-after {
+        bottom: 60px;
+        left: 10%;
+    }
+    .notify-after .form-group { float: left }
+}
+@media only screen and (min-width: 238px) and (max-width: 319px) { 
+    .intro { position: absolute }
+    .logo { margin: -60px 0 25px }
+    .text-logo { margin: -60px 0 0 }
+    .intro-title {
+        font-size: 1em;
+        margin: -25px 0 5px;
+    }
+    .fa-clock-spin { font-size: 2em !important }
+    .countdown { margin: 10px 0 }
+    .countdown li { margin: -25px 0 0 }
+    .countdown li span { font-size: 1.5em }
+    .countdown li p {
+        font-size: 12px;
+        margin: -25px 0 0;
+    }
+    .countdown li.seperator {
+        font-size: 8px;
+        line-height: 12px;
+        margin-top: 0;
+    }
+    .countdown li { margin: -30px 0 0px }
+    .intro-subtitle { margin: -5px 0 0 }
+    .fa-social {
+        height: 38px;
+        line-height: 38px;
+        width: 35px;
+    }
+    .notify-after .form-group { float: left }
+}
+@media only screen and (min-width: 481px) and (max-width: 568px) { 
+    .intro { position: absolute }
+    .intro-content { padding: 2% }
+    .logo { margin: -45px 0 25px;}
+    .text-logo {
+        font-size: 2em;
+        margin: 0;
+    }
+    .intro-title {
+        font-size: 2em;
+        margin: -30px 0 5px;
+    }
+
+    .fa-clock-spin { font-size: 1.5em !important }
+    .countdown { margin: -18px 0 0 }
+    .countdown li span { font-size: 3em }
+    .countdown li p { margin: -15px 0 10px }
+    .countdown li.seperator {
+        font-size: 9px;
+        line-height: normal;
+        margin-top: 28px;
+        vertical-align: top;
+    }
+    .container-open .notify-after {
+        bottom: 60px;
+        left: 30%;
+    }
+    .notify-after .form-group { float: left }
+}
+@media only screen and (min-width: 569px) and (max-width: 736px) { 
+    .intro { position: absolute }
+    .logo { margin: 0 0 20px }
+    .text-logo { margin: -60px 0 0 }
+    .intro-title {
+        font-size: 2em;
+        margin: -25px 0 5px;
+    }
+    .fa-clock-spin { font-size: 2em !important }
+    .countdown li span { font-size: 2em }
+    .countdown li p {
+        font-size: 12px;
+        margin: -20px 0 0;
+    }
+    .countdown li.seperator {
+        font-size: 10px;
+        line-height: 15px;
+        margin-top: -15px;
+    }
+    .countdown li { margin: -40px 0 0px }
+    .intro-subtitle { margin: -15px 0 0 }
+    .container-open .notify-after {
+        bottom: 60px;
+        left: 30%;
+    }
+    .notify-after .form-group { float: left }
+}
+@media only screen and (min-width: 768px) and (max-width:991px) { 
+    .intro-title { font-size: 3em }
+    .container-open .notify-after { left: 34% }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) { 
+    .container-open .notify-after { left: 39% }
+}
+@media (min-width: 1200px) { 
+    
+}
+@media print, (-o-min-device-pixel-ratio: 5/4), (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) { 
+    /* Style adjustments for high resolution devices */
+}
+/* 
+* ==========================================================================
+    Screen Loader
+* ========================================================================== 
+*/
+.screen-loader {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    left: 0;
+    top: 0;
+    background: #fff url(../img/Preloader.gif) no-repeat center center;
+    z-index: 10000;
+}
+/* 
+* ==========================================================================
+    Preloader
+* ========================================================================== 
+*/
+#preload {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    left: 0;
+    top: 0;
+    background: #000;
+    display: none;
+    z-index: 10000;
+}
+#preload-status {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    padding: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: block;
+    background: #fff url(../img/Preloader.gif) no-repeat center center;
+    opacity: 1;
+    -moz-opacity: 1;
+    -webkit-opacity: 1;
+    filter: alpha(opacity=1);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=1)";
+}
+/* preload content */
+.preload-content {
+    position: fixed;
+    width: auto;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: #000;
+    opacity: 0.6;
+    -moz-opacity: 0.6;
+    -webkit-opacity: 0.6;
+    filter: alpha(opacity=1);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=1)";
+}
+.preload-content-rain {
+    position: fixed;
+    width: auto;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: #000;
+    opacity: 0.4;
+    -moz-opacity: 0.4;
+    -webkit-opacity: 0.4;
+    filter: alpha(opacity=1);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=1)";
+}
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   http://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+@media print { 
+    *,
+    *:before,
+    *:after {
+        background: transparent !important;
+        color: #000 !important;
+        /* Black prints faster: ;
+        http: //www.sanbeiji.com/archives/953 */ box-shadow: none !important;
+        text-shadow: none !important;
+    }
+    a,
+    a:visited { text-decoration: underline }
+    a[href]:after { content: " (" attr(href) ")" }
+    abbr[title]:after { content: " (" attr(title) ")" }
+    /*
+         * Don't show links that are fragment identifiers,
+         * or use the `javascript:` pseudo protocol
+         */
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after { content: "" }
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+    /*
+         * Printing Tables:
+         * http://css-discuss.incutio.com/wiki/Printing_Tables
+         */
+    thead { display: table-header-group }
+    tr,
+    img { page-break-inside: avoid }
+    img { max-width: 100% !important }
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+    h2,
+    h3 { page-break-after: avoid }
+}
