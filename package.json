@@ -1,6 +1,6 @@
 {
   "name": "multi-select-react",
-  "version": "0.1.3",
+  "version": "0.1.4",
   
   "description": "Multi Select React – A React Component providing multi select functionality.",
   "main": "build/index.js",
