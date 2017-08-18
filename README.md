@@ -13,7 +13,7 @@ npm install multi-select-react
 ## 1. Basic Usage
 ```js
 import React, { Component } from 'react';
-import { SelectState } from 'react-select-multi';
+import  MultiSelectReact  from 'multi-select-react';
 
 class MyComponent extends Component {
   constructor() {
@@ -32,7 +32,7 @@ class MyComponent extends Component {
             color: "#8a6d3b"
         };
     return (
-      <MultiSelectDropDown 
+      <MultiSelectReact 
       options={this.state.multiSelect}
       optionClicked={this.optionClicked.bind(this)}
       selectedBadgeClicked={this.selectedBadgeClicked.bind(this)}
