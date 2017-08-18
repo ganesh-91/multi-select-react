@@ -1,9 +1,13 @@
 .multi-select .arrow {
-    margin: 0 5px;
+    margin: auto;
     display: inline-block;
     cursor: pointer;
-    float: right;
     font-size: 12px;
+    width: 20px;
+    /*margin: 0 5px;*/
+    display: inline-block;
+    cursor: pointer;
+    /* float: right; */
 }
 
 .multi-select .options.show {
@@ -11,6 +15,9 @@
 }
 
 .multi-select .options {
+    height: 200px;
+    z-index: 10001;
+    overflow-x: auto;
     background-color: #fff;
     position: absolute;
     margin: 0;
@@ -19,8 +26,8 @@
     border-top-width: 0;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
-    /*width: calc( 100% - 2px);*/
-    width: inherit;
+    width: 100%;
+    /* width: inherit; */
     padding: 0;
     display: none;
     box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.2);
@@ -49,20 +56,26 @@
     height: inherit;
     border: 1px solid #ccc;
     border-radius: 4px;
-    display: table-cell;
-    padding: 0 0 0 10px;
+    display: inline-block;
+    padding: 5px 0px 5px 10px;
+    width: inherit;
+    /*padding: 0 0 0 10px;*/
 }
 
 .multi-select .selected-options .selected-options-badges-list {
     font-weight: 400;
     margin: 0;
     text-align: left;
-    line-height: 1;
     vertical-align: middle;
     display: inline-block;
-    width: 256px;
+    width: calc(100% - 20px);
     white-space: nowrap;
+    text-overflow: clip;
     overflow: hidden;
+    /* float: left; */
+    /*width: calc(100% - 30px);*/
+    /*padding: 2px 0;*/
+    /*line-height: 1.4;*/
 }
 
 .multi-select .selected-options .selected-options-badges:after {
@@ -73,16 +86,17 @@
 }
 
 .multi-select {
+    position: relative;
     background-color: #fff;
     border-radius: 4px;
-    width: 290px;
+    width: 100%;
     outline: none;
     display: inline-block;
-    height: 28px;
     -webkit-user-select: none;
     -moz-user-select: none;
     -khtml-user-select: none;
     -ms-user-select: none;
+    /*height: 28px;*/
 }
 
 .multi-select .selected-options-badges {

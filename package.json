@@ -1,7 +1,8 @@
 {
   "name": "multi-select-react",
-  "version": "0.0.1",
-  "description": "Multi Select React – Component Library for react",
+  "version": "0.1.3",
+  
+  "description": "Multi Select React – A React Component providing multi select functionality.",
   "main": "build/index.js",
   "scripts": {
     "build": "webpack"
@@ -22,9 +23,6 @@
   ],
   "author": "ganesh khaire <ganesh.khaire91@gmail.com>",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/ganesh-91/multi-select-react/issues"
-  },
   "homepage": "https://github.com/ganesh-91/multi-select-react#readme",
   "peerDependencies": {
     "react": "^15.5.4"
