@@ -1,0 +1,65 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  /*padding: 40px 20px;*/
+  color: #bfdfff;
+}
+
+.App-header .header-top {
+  padding: 40px 20px;
+  background-color: #007eff;
+}
+
+.App-header .header-top .tag-line {
+  font-size: 1.5em;
+}
+
+.App-header .header-bottom {
+  padding: 20px;
+  background-color: #e6f2ff;
+  color: #007eff;
+}
+
+.App-header .header-name {
+  font-size: 3em;
+  color: #fff;
+}
+
+.no-margin {
+  margin: 0;
+}
+
+.top-margin-30 {
+  margin-top: 30px;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media screen and (min-width: 400px) {
+  .App-header .header-top .tag-line {
+    width: 300px;
+    margin: auto
+  }
+  .App-header .header-bottom .container {
+    text-align: right;
+  }
+}
+
+@media screen and (max-width: 399px) {
+  .App-header .header-bottom .container {
+    text-align: center;
+  }
+}

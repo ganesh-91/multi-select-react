@@ -1,0 +1,22 @@
+{
+  "name": "multi-select-react",
+  "version": "0.1.2",
+  "private": true,
+  "dependencies": {
+    "multi-select-react": "^0.1.2",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-scripts": "1.0.11"
+  },
+  "homepage": "https://ganesh-91.github.io/multi-select-react/",
+  "scripts": {
+    "deploy": "gh-pages -d build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "gh-pages": "^1.0.0"
+  }
+}
