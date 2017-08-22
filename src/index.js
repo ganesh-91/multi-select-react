@@ -60,6 +60,9 @@ class ReactMultiSelect extends React.Component {
             </div>
         );
     }
+    componentDidMount(){
+        
+    }
     selectedOptionsClick(id) {
         let filteredToasts = this.props.options.slice();
 
@@ -76,11 +79,11 @@ class ReactMultiSelect extends React.Component {
 
         // for single select options
 
-        // if (this.props.isSingleSelect === true) {
-        //     dd.map((option) => {
-        //         option.value = false;
-        //     });
-        // }
+        if (this.props.isSingleSelect === true) {
+            dd.map((option) => {
+                option.value = false;
+            });
+        }
         
         dd[index].value = value;
         this.props.selectedBadgeClicked(dd);
