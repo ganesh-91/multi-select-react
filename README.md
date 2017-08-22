@@ -64,7 +64,8 @@ class MyComponent extends Component {
 | `optionsListStyles` | `object` | `{}` | CSS for MultiSelect options drop down
 | `options` | `array` | R | Options to be pre-populated in select
 | `optionClicked` | `function` | R | Callback, invoked after an option is clicked
-| `selectedBadgeClicked` | `function` | R | Callback, invoked after an selected option badge(tablet) is clicked
+| `selectedBadgeClicked` | `function` | R | Callback, invoked after an selected option badge
+| `isSingleSelect` | `boolean` | Optional | boolean value for single select functionality, component is default behavior is multi select 
 
 
 ## Licence
