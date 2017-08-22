@@ -95,6 +95,8 @@ class MyComponent extends Component {
 
 }
 ```
+Default value for isSingleSelect is false, for using this component as normal single select component set isSingleSelect to true.
+
 
 ## 3. Text Wrap
 ```js
@@ -124,7 +126,7 @@ class MyComponent extends Component {
       selectedBadgeClicked={this.selectedBadgeClicked.bind(this)}
       selectedOptionsStyles={selectedOptionsStyles}
       optionsListStyles={optionsListStyles}
-      textWrap={true} />
+      isTextWrap={true} />
     );
   }
 
@@ -137,6 +139,7 @@ class MyComponent extends Component {
 
 }
 ```
+Default value for isTextWarp is true, for component to grow vertically and display all options selected set isTextWarp to false.
 
 ----
 
@@ -150,7 +153,7 @@ class MyComponent extends Component {
 | `optionClicked` | `function` | R | Callback, invoked after an option is clicked
 | `selectedBadgeClicked` | `function` | R | Callback, invoked after an selected option badge
 | `isSingleSelect` | `boolean` | Optional | Boolean value for single select functionality, component's default behavior is multi select
-| `textWrap` | `boolean` | R | Boolean value for text wrap i.e selected option will expand horizontally
+| `isTextWrap` | `boolean` | Optional | Boolean value for text wrap i.e selected option will expand horizontally
 
 ## Licence
 
