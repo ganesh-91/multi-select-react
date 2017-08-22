@@ -9,12 +9,12 @@ class ReactMultiSelect extends React.Component {
     }
     render() {
         const selectedOptionsStyles = {
-            color: "#000",
-            backgroundColor: "#fff"
+            color: "#3c763d",
+            backgroundColor: "#dff0d8"
         };
         const optionsListStyles = {
-            backgroundColor: "cornflowerblue",
-            color: "#fff"
+            backgroundColor: "#dff0d8",
+            color: "#3c763d"
         };
         let selected = [];
         this.props.options.map((day) => {
