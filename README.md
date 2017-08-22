@@ -54,7 +54,7 @@ class MyComponent extends Component {
 }
 ```
 
-## 2. Single Select Usage
+## 2. Single Select
 ```js
 import React, { Component } from 'react';
 import  MultiSelectReact  from 'multi-select-react';
