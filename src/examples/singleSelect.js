@@ -86,8 +86,8 @@ class SingleSelect extends Component {
           <h3 className="text-left">2. Single Select Functionality </h3>
           <MultiSelect
             options={this.state.selectOptions}
-            optionClicked={this.singleOptionClicked.bind(this)}
-            selectedBadgeClicked={this.singleSelectedBadgeClicked.bind(this)}
+            optionClicked={this.optionClicked.bind(this)}
+            selectedBadgeClicked={this.selectedBadgeClicked.bind(this)}
             selectedOptionsStyles={selectedOptionsStyles}
             optionsListStyles={optionsListStyles}
             isSingleSelect={this.state.isSingleSelect} />
@@ -161,16 +161,10 @@ class SingleSelect extends Component {
     // alert('A name was submitted: ' + this.selOptColor.value + 'A name was submitted: ' + this.selOptBg.value + 'A name was submitted: ' + this.selDdOptColor.value + 'A name was submitted: ' + this.selDdOptBg.value);
     event.preventDefault();
   }
-  multiOptionClicked(optionsList) {
+  optionClicked(optionsList) {
     this.setState({ selectOptions: optionsList });
   }
-  multiSelectedBadgeClicked(optionsList) {
-    this.setState({ selectOptions: optionsList });
-  }
-  singleOptionClicked(optionsList) {
-    this.setState({ selectOptions: optionsList });
-  }
-  singleSelectedBadgeClicked(optionsList) {
+  selectedBadgeClicked(optionsList) {
     this.setState({ selectOptions: optionsList });
   }
 }

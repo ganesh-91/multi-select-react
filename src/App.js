@@ -92,8 +92,8 @@ class App extends Component {
             <h3 className="text-left">1. Basic usage</h3>
             <MultiSelect
               options={this.state.selectOptions}
-              optionClicked={this.multiOptionClicked.bind(this)}
-              selectedBadgeClicked={this.multiSelectedBadgeClicked.bind(this)}
+              optionClicked={this.optionClicked.bind(this)}
+              selectedBadgeClicked={this.selectedBadgeClicked.bind(this)}
               selectedOptionsStyles={selectedOptionsStyles}
               optionsListStyles={optionsListStyles}
               isTextWrap={true} />
@@ -186,16 +186,10 @@ class App extends Component {
     // alert('A name was submitted: ' + this.selOptColor.value + 'A name was submitted: ' + this.selOptBg.value + 'A name was submitted: ' + this.selDdOptColor.value + 'A name was submitted: ' + this.selDdOptBg.value);
     event.preventDefault();
   }
-  multiOptionClicked(optionsList) {
+  optionClicked(optionsList) {
     this.setState({ selectOptions: optionsList });
   }
-  multiSelectedBadgeClicked(optionsList) {
-    this.setState({ selectOptions: optionsList });
-  }
-  singleOptionClicked(optionsList) {
-    this.setState({ selectOptions: optionsList });
-  }
-  singleSelectedBadgeClicked(optionsList) {
+  selectedBadgeClicked(optionsList) {
     this.setState({ selectOptions: optionsList });
   }
 }

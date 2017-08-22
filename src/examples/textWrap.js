@@ -84,8 +84,8 @@ class TextWrap extends Component {
                     <h3 className="text-left">3. Text Warp </h3>
                     <MultiSelect
                         options={this.state.selectOptions}
-                        optionClicked={this.singleOptionClicked.bind(this)}
-                        selectedBadgeClicked={this.singleSelectedBadgeClicked.bind(this)}
+                        optionClicked={this.optionClicked.bind(this)}
+                        selectedBadgeClicked={this.selectedBadgeClicked.bind(this)}
                         selectedOptionsStyles={selectedOptionsStyles}
                         optionsListStyles={optionsListStyles}
                         isTextWrap={this.state.isTextWrap} />
@@ -161,16 +161,10 @@ class TextWrap extends Component {
         // alert('A name was submitted: ' + this.selOptColor.value + 'A name was submitted: ' + this.selOptBg.value + 'A name was submitted: ' + this.selDdOptColor.value + 'A name was submitted: ' + this.selDdOptBg.value);
         event.preventDefault();
     }
-    multiOptionClicked(optionsList) {
+    optionClicked(optionsList) {
         this.setState({ selectOptions: optionsList });
     }
-    multiSelectedBadgeClicked(optionsList) {
-        this.setState({ selectOptions: optionsList });
-    }
-    singleOptionClicked(optionsList) {
-        this.setState({ selectOptions: optionsList });
-    }
-    singleSelectedBadgeClicked(optionsList) {
+    selectedBadgeClicked(optionsList) {
         this.setState({ selectOptions: optionsList });
     }
 }
