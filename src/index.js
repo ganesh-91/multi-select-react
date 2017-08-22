@@ -8,13 +8,25 @@ class ReactMultiSelect extends React.Component {
         };
     }
     render() {
+        const textWrapOptionStyle = {
+            padding: "5px 0px 5px 10px"
+        };
+        const nonTextWrapOptionStyle = {
+            padding: "0px 0px 5px 10px"
+        };
+        const textWrapSelectedBadgesStyle = {
+            margin: "0 5px 0 0"
+        };
+        const nonTextWrapSelectedBadgesStyle = {
+            margin: "5px 5px 0 0"
+        };
         const selectedOptionsStyles = {
-            color: "#000",
-            backgroundColor: "#fff"
+            color: "#3c763d",
+            backgroundColor: "#dff0d8"
         };
         const optionsListStyles = {
-            backgroundColor: "cornflowerblue",
-            color: "#fff"
+            backgroundColor: "#dff0d8",
+            color: "#3c763d"
         };
         let selected = [];
         this.props.options.map((day) => {
@@ -23,24 +35,24 @@ class ReactMultiSelect extends React.Component {
             }
         });
         let selectedList = (
-            <label className="selected-options-badges-list" onClick={() => {
+            <label className={"selected-options-badges-list " + (this.props.isTextWrap ? "text-warp" : "")} onClick={() => {
                 this.setState({ dropDownClicked: false });
             }}>
                 {selected.map((obj) => {
                     return (
                         <span style={this.props.selectedOptionsStyles || selectedOptionsStyles} key={obj.id}
                             onClick={this.selectedOptionsClick.bind(this, obj.id)}
-                            className="selected-options-badges" >{obj.label}
+                            className={"selected-options-badges " + (this.props.isTextWrap ? "margin-right" : "margin-top-right")} >{obj.label}
                         </span>
                     );
                 })}
             </label>);
         return (
-            <div className="multi-select" tabIndex="0" 
-            onBlur={() => {
-                this.setState({ dropDownClicked: false });
-            }}>
-                <div className="selected-options">{selectedList}
+            <div className="multi-select" tabIndex="0"
+                onBlur={() => {
+                    this.setState({ dropDownClicked: false });
+                }}>
+                <div className="selected-options" style={this.props.isTextWrap ? textWrapOptionStyle : nonTextWrapOptionStyle}>{selectedList}
                     <div className="arrow" onClick={() => {
                         this.setState({ dropDownClicked: !this.state.dropDownClicked });
                     }}>
@@ -60,6 +72,9 @@ class ReactMultiSelect extends React.Component {
             </div>
         );
     }
+    componentDidMount() {
+
+    }
     selectedOptionsClick(id) {
         let filteredToasts = this.props.options.slice();
 
@@ -75,13 +90,12 @@ class ReactMultiSelect extends React.Component {
         let dd = this.props.options.slice();
 
         // for single select options
+        if (this.props.isSingleSelect === true) {
+            dd.map((option) => {
+                option.value = false;
+            });
+        }
 
-        // if (this.props.isSingleSelect === true) {
-        //     dd.map((option) => {
-        //         option.value = false;
-        //     });
-        // }
-        
         dd[index].value = value;
         this.props.selectedBadgeClicked(dd);
     }
