@@ -35,14 +35,14 @@ class ReactMultiSelect extends React.Component {
             }
         });
         let selectedList = (
-            <label className={"selected-options-badges-list " + (this.props.textWrap ? "text-warp" : "")} onClick={() => {
+            <label className={"selected-options-badges-list " + (this.props.isTextWrap ? "text-warp" : "")} onClick={() => {
                 this.setState({ dropDownClicked: false });
             }}>
                 {selected.map((obj) => {
                     return (
                         <span style={this.props.selectedOptionsStyles || selectedOptionsStyles} key={obj.id}
                             onClick={this.selectedOptionsClick.bind(this, obj.id)}
-                            className={"selected-options-badges " + (this.props.textWrap ? "margin-right" : "margin-top-right")} >{obj.label}
+                            className={"selected-options-badges " + (this.props.isTextWrap ? "margin-right" : "margin-top-right")} >{obj.label}
                         </span>
                     );
                 })}
@@ -52,7 +52,7 @@ class ReactMultiSelect extends React.Component {
                 onBlur={() => {
                     this.setState({ dropDownClicked: false });
                 }}>
-                <div className="selected-options" style={this.props.textWrap ? textWrapOptionStyle : nonTextWrapOptionStyle}>{selectedList}
+                <div className="selected-options" style={this.props.isTextWrap ? textWrapOptionStyle : nonTextWrapOptionStyle}>{selectedList}
                     <div className="arrow" onClick={() => {
                         this.setState({ dropDownClicked: !this.state.dropDownClicked });
                     }}>
