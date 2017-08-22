@@ -1,8 +1,8 @@
 {
   "name": "multi-select-react",
-  "version": "0.1.6",
+  "version": "0.1.8",
   
-  "description": "Multi Select React – A React Component providing multi select functionality.",
+  "description": "Multi Select React – A React Component providing multi select and single select functionality.",
   "main": "build/index.js",
   "scripts": {
     "build": "webpack"

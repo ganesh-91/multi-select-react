@@ -33,6 +33,14 @@
     box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.2);
 }
 
+.margin-right {
+    margin: 0 5px 0 0
+}
+
+.margin-top-right {
+    margin: 5px 5px 0 0
+}
+
 .options li {
     display: block;
     font-size: 16px;
@@ -46,6 +54,11 @@
     padding: 2px 5px;
 }
 
+.text-warp {
+    white-space: nowrap;
+    overflow: hidden;
+}
+
 .multi-select .bg-color-blue {
     background-color: cornflowerblue;
     color: #fff;
@@ -57,7 +70,7 @@
     border: 1px solid #ccc;
     border-radius: 4px;
     display: inline-block;
-    padding: 5px 0px 5px 10px;
+    /*padding: 5px 0px 5px 10px;*/
     width: inherit;
     /*padding: 0 0 0 10px;*/
 }
@@ -69,9 +82,9 @@
     vertical-align: middle;
     display: inline-block;
     width: calc(100% - 20px);
-    white-space: nowrap;
     text-overflow: clip;
-    overflow: hidden;
+    /*overflow: hidden;
+    white-space: nowrap;*/
     /* float: left; */
     /*width: calc(100% - 30px);*/
     /*padding: 2px 0;*/
@@ -104,7 +117,7 @@
     font-size: 14px;
     border-radius: 2px;
     padding: 0 5px;
-    margin: 0 5px 0 0;
+    /*margin: 0 5px 0 0;*/
     border: solid 1px #ddd;
     display: inline-block;
 }
