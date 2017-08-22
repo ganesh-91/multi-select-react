@@ -53,6 +53,7 @@ class MyComponent extends Component {
 
 }
 ```
+
 ## 2. Single Select Usage
 ```js
 import React, { Component } from 'react';
@@ -71,8 +72,8 @@ class MyComponent extends Component {
             backgroundColor: "#dff0d8"
         };
         const optionsListStyles = {
-            backgroundColor: "#fcf8e3",
-            color: "#8a6d3b"
+            backgroundColor: "#dff0d8",
+            color: "#3c763d"
         };
     return (
       <MultiSelectReact 
@@ -82,6 +83,48 @@ class MyComponent extends Component {
       selectedOptionsStyles={selectedOptionsStyles}
       optionsListStyles={optionsListStyles}
       isSingleSelect={true} />
+    );
+  }
+
+  optionClicked(optionsList) {
+        this.setState({ multiSelect: optionsList });
+  }
+  selectedBadgeClicked(optionsList) {
+        this.setState({ multiSelect: optionsList });
+  }
+
+}
+```
+
+## 3. Text Wrap
+```js
+import React, { Component } from 'react';
+import  MultiSelectReact  from 'multi-select-react';
+
+class MyComponent extends Component {
+  constructor() {
+        super();
+        this.state = {
+            multiSelect: []
+        };
+    }
+  render() {
+        const selectedOptionsStyles = {
+            color: "#3c763d",
+            backgroundColor: "#dff0d8"
+        };
+        const optionsListStyles = {
+            backgroundColor: "#dff0d8",
+            color: "#3c763d"
+        };
+    return (
+      <MultiSelectReact 
+      options={this.state.multiSelect}
+      optionClicked={this.optionClicked.bind(this)}
+      selectedBadgeClicked={this.selectedBadgeClicked.bind(this)}
+      selectedOptionsStyles={selectedOptionsStyles}
+      optionsListStyles={optionsListStyles}
+      textWrap={true} />
     );
   }
 
@@ -106,8 +149,8 @@ class MyComponent extends Component {
 | `options` | `array` | R | Options to be pre-populated in select
 | `optionClicked` | `function` | R | Callback, invoked after an option is clicked
 | `selectedBadgeClicked` | `function` | R | Callback, invoked after an selected option badge
-| `isSingleSelect` | `boolean` | Optional | boolean value for single select functionality, component's default behavior is multi select
-
+| `isSingleSelect` | `boolean` | Optional | Boolean value for single select functionality, component's default behavior is multi select
+| `textWrap` | `boolean` | R | Boolean value for text wrap i.e selected option will expand horizontally
 
 ## Licence
 
