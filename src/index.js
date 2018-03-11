@@ -34,13 +34,17 @@ class ReactMultiSelect extends React.Component {
                 selected.push({ label: day.label, id: day.id });
             }
         });
+        const disabledStyle = {
+            color: "#212529",
+            backgroundColor: "#dee2e6"
+        };
         let selectedList = (
             <label className={"selected-options-badges-list " + (this.props.isTextWrap ? "text-warp" : "")} onClick={() => {
                 this.setState({ dropDownClicked: false });
             }}>
                 {selected.map((obj) => {
                     return (
-                        <span style={this.props.selectedOptionsStyles || selectedOptionsStyles} key={obj.id}
+                        <span style={this.props.disabled ? disabledStyle : (this.props.selectedOptionsStyles || selectedOptionsStyles)} key={obj.id}
                             onClick={this.selectedOptionsClick.bind(this, obj.id)}
                             className={"selected-options-badges " + (this.props.isTextWrap ? "margin-right" : "margin-top-right")} >{obj.label}
                         </span>
@@ -63,7 +67,7 @@ class ReactMultiSelect extends React.Component {
                     {this.props.options.map((el, i) => {
                         return (
                             <li key={el.id} value={el.value}  >
-                                <div className="option-list" style={el.value ? (this.props.optionsListStyles || optionsListStyles) : {}} onClick={this.optionsOnchange.bind(this, i, !el.value)}>{el.label}</div>
+                                <div className="option-list" style={this.props.disabled ? disabledStyle : (el.value ? (this.props.optionsListStyles || optionsListStyles) : {})} onClick={this.optionsOnchange.bind(this, i, !el.value)}>{el.label}</div>
                             </li>
                         );
                     })}
