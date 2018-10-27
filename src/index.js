@@ -1,12 +1,64 @@
 import React from "react";
 import "./style.css";
+
+
 class ReactMultiSelect extends React.Component {
     constructor() {
         super();
         this.state = {
             dropDownClicked: false
         };
+
+        this.buildDropDown = this.buildDropDown.bind(this);
+        this.onSelectAll   = this.onSelectAll.bind(this);
+        this.onSelectNone = this.onSelectNone.bind(this);
     }
+
+    buildDropDown(){
+        let optionsList = [];
+        let optionsListStyles = {};
+        let selectedCount = 0;
+        
+
+        
+        optionsList = this.props.options.map((el, i) => {
+            if(el.value){
+                selectedCount++;
+                optionsListStyles = this.props.optionsListStyles;
+            }else{
+                optionsListStyles = {};
+            }
+            return (
+                <li key={el.id} value={el.value}  >
+                    <div className="option-list" style={this.props.disabled ? disabledStyle : optionsListStyles} onClick={this.optionsOnchange.bind(this, i, !el.value)}>{el.label}</div>
+                </li>
+            );
+        })
+
+        if(this.props.enableSelectAllorNone){
+            optionsList = [<li key='SelectAll' value={selectedCount === optionsList.length}  >
+                            <div className="option-list" 
+                            style={this.props.disabled ? disabledStyle : (selectedCount === optionsList.length ? (this.props.optionsListStyles || optionsListStyles) : {})}
+                            onClick={this.onSelectAll}
+                            >
+                            Select All
+                            </div>
+                      </li>].concat(optionsList);
+        
+            optionsList = optionsList.concat([<li key='SelectNone' value={selectedCount === 0}  >
+                                <div className="option-list" 
+                                style={this.props.disabled ? disabledStyle : (selectedCount === 0 ? (this.props.optionsListStyles || optionsListStyles) : {})}
+                                onClick={this.onSelectNone}
+                                >
+                                Select None
+                                </div>
+                        </li>]);
+        }
+        
+
+        return optionsList;
+    }
+
     render() {
         const textWrapOptionStyle = {
             padding: "5px 0px 5px 10px"
@@ -64,20 +116,7 @@ class ReactMultiSelect extends React.Component {
                     </div>
                 </div>
                 <ul className={"options " + (this.state.dropDownClicked ? "show" : "")}>
-                    <li key='SelectAll' value='selectAll'  >
-                                <div className="option-list" >Select All</div>
-                    </li>
-                    {this.props.options.map((el, i) => {
-                        return (
-                            <li key={el.id} value={el.value}  >
-                                <div className="option-list" style={this.props.disabled ? disabledStyle : (el.value ? (this.props.optionsListStyles || optionsListStyles) : {})} onClick={this.optionsOnchange.bind(this, i, !el.value)}>{el.label}</div>
-                            </li>
-                        );
-                    })}
-                    <li key='SelectNone' value='selectNone'  >
-                                <div className="option-list">Select None</div>
-                    </li>
-
+                   {this.buildDropDown()}
                 </ul>
             </div>
         );
@@ -105,9 +144,23 @@ class ReactMultiSelect extends React.Component {
                 option.value = false;
             });
         }
-
         dd[index].value = value;
         this.props.selectedBadgeClicked(dd);
+    }
+
+    onSelectAll(){
+       this.onSelectAllOrNone(true,this);
+    }
+    onSelectNone(){
+        this.onSelectAllOrNone(false,this);
+    }
+    onSelectAllOrNone(choice,ref){
+        let dd = ref.props.options.slice();
+        let ddAllChecked = dd.map((option)=>{
+            option.value = choice;
+            return option;
+        });
+        ref.props.selectedBadgeClicked(ddAllChecked);
     }
 }
 

@@ -137,13 +137,74 @@ var ReactMultiSelect = function (_React$Component) {
         _this.state = {
             dropDownClicked: false
         };
+
+        _this.buildDropDown = _this.buildDropDown.bind(_this);
+        _this.onSelectAll = _this.onSelectAll.bind(_this);
+        _this.onSelectNone = _this.onSelectNone.bind(_this);
         return _this;
     }
 
     _createClass(ReactMultiSelect, [{
+        key: "buildDropDown",
+        value: function buildDropDown() {
+            var _this2 = this;
+
+            var optionsList = [];
+            var optionsListStyles = {};
+            var selectedCount = 0;
+
+            optionsList = this.props.options.map(function (el, i) {
+                if (el.value) {
+                    selectedCount++;
+                    optionsListStyles = _this2.props.optionsListStyles;
+                } else {
+                    optionsListStyles = {};
+                }
+                return _react2.default.createElement(
+                    "li",
+                    { key: el.id, value: el.value },
+                    _react2.default.createElement(
+                        "div",
+                        { className: "option-list", style: _this2.props.disabled ? disabledStyle : optionsListStyles, onClick: _this2.optionsOnchange.bind(_this2, i, !el.value) },
+                        el.label
+                    )
+                );
+            });
+
+            if (this.props.enableSelectAllorNone) {
+                optionsList = [_react2.default.createElement(
+                    "li",
+                    { key: "SelectAll", value: selectedCount === optionsList.length },
+                    _react2.default.createElement(
+                        "div",
+                        { className: "option-list",
+                            style: this.props.disabled ? disabledStyle : selectedCount === optionsList.length ? this.props.optionsListStyles || optionsListStyles : {},
+                            onClick: this.onSelectAll
+                        },
+                        "Select All"
+                    )
+                )].concat(optionsList);
+
+                optionsList = optionsList.concat([_react2.default.createElement(
+                    "li",
+                    { key: "SelectNone", value: selectedCount === 0 },
+                    _react2.default.createElement(
+                        "div",
+                        { className: "option-list",
+                            style: this.props.disabled ? disabledStyle : selectedCount === 0 ? this.props.optionsListStyles || optionsListStyles : {},
+                            onClick: this.onSelectNone
+                        },
+                        "Select None"
+                    )
+                )]);
+            }
+
+            return optionsList;
+        }
+    }, {
         key: "render",
         value: function render() {
-            var _this2 = this;
+            var _this3 = this;
 
             var textWrapOptionStyle = {
                 padding: "5px 0px 5px 10px"
@@ -178,14 +239,14 @@ var ReactMultiSelect = function (_React$Component) {
             var selectedList = _react2.default.createElement(
                 "label",
                 { className: "selected-options-badges-list " + (this.props.isTextWrap ? "text-warp" : ""), onClick: function onClick() {
-                        _this2.setState({ dropDownClicked: false });
+                        _this3.setState({ dropDownClicked: false });
                     } },
                 selected.map(function (obj) {
                     return _react2.default.createElement(
                         "span",
-                        { style: _this2.props.disabled ? disabledStyle : _this2.props.selectedOptionsStyles || selectedOptionsStyles, key: obj.id,
-                            onClick: _this2.selectedOptionsClick.bind(_this2, obj.id),
-                            className: "selected-options-badges " + (_this2.props.isTextWrap ? "margin-right" : "margin-top-right") },
+                        { style: _this3.props.disabled ? disabledStyle : _this3.props.selectedOptionsStyles || selectedOptionsStyles, key: obj.id,
+                            onClick: _this3.selectedOptionsClick.bind(_this3, obj.id),
+                            className: "selected-options-badges " + (_this3.props.isTextWrap ? "margin-right" : "margin-top-right") },
                         obj.label
                     );
                 })
@@ -194,7 +255,7 @@ var ReactMultiSelect = function (_React$Component) {
                 "div",
                 { className: "multi-select", tabIndex: "0",
                     onBlur: function onBlur() {
-                        _this2.setState({ dropDownClicked: false });
+                        _this3.setState({ dropDownClicked: false });
                     } },
                 _react2.default.createElement(
                     "div",
@@ -203,7 +264,7 @@ var ReactMultiSelect = function (_React$Component) {
                     _react2.default.createElement(
                         "div",
                         { className: "arrow", onClick: function onClick() {
-                                _this2.setState({ dropDownClicked: !_this2.state.dropDownClicked });
+                                _this3.setState({ dropDownClicked: !_this3.state.dropDownClicked });
                             } },
                         "\u25BC"
                     )
@@ -211,35 +272,7 @@ var ReactMultiSelect = function (_React$Component) {
                 _react2.default.createElement(
                     "ul",
                     { className: "options " + (this.state.dropDownClicked ? "show" : "") },
-                    _react2.default.createElement(
-                        "li",
-                        { key: "SelectAll", value: "selectAll" },
-                        _react2.default.createElement(
-                            "div",
-                            { className: "option-list" },
-                            "Select All"
-                        )
-                    ),
-                    this.props.options.map(function (el, i) {
-                        return _react2.default.createElement(
-                            "li",
-                            { key: el.id, value: el.value },
-                            _react2.default.createElement(
-                                "div",
-                                { className: "option-list", style: _this2.props.disabled ? disabledStyle : el.value ? _this2.props.optionsListStyles || optionsListStyles : {}, onClick: _this2.optionsOnchange.bind(_this2, i, !el.value) },
-                                el.label
-                            )
-                        );
-                    }),
-                    _react2.default.createElement(
-                        "li",
-                        { key: "SelectNone", value: "selectNone" },
-                        _react2.default.createElement(
-                            "div",
-                            { className: "option-list" },
-                            "Select None"
-                        )
-                    )
+                    this.buildDropDown()
                 )
             );
         }
@@ -270,9 +303,28 @@ var ReactMultiSelect = function (_React$Component) {
                     option.value = false;
                 });
             }
-
             dd[index].value = value;
             this.props.selectedBadgeClicked(dd);
+        }
+    }, {
+        key: "onSelectAll",
+        value: function onSelectAll() {
+            this.onSelectAllOrNone(true, this);
+        }
+    }, {
+        key: "onSelectNone",
+        value: function onSelectNone() {
+            this.onSelectAllOrNone(false, this);
+        }
+    }, {
+        key: "onSelectAllOrNone",
+        value: function onSelectAllOrNone(choice, ref) {
+            var dd = ref.props.options.slice();
+            var ddAllChecked = dd.map(function (option) {
+                option.value = choice;
+                return option;
+            });
+            ref.props.selectedBadgeClicked(ddAllChecked);
         }
     }]);
 
