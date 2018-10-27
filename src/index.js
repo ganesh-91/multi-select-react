@@ -64,6 +64,9 @@ class ReactMultiSelect extends React.Component {
                     </div>
                 </div>
                 <ul className={"options " + (this.state.dropDownClicked ? "show" : "")}>
+                    <li key='SelectAll' value='selectAll'  >
+                                <div className="option-list" >Select All</div>
+                    </li>
                     {this.props.options.map((el, i) => {
                         return (
                             <li key={el.id} value={el.value}  >
@@ -71,6 +74,9 @@ class ReactMultiSelect extends React.Component {
                             </li>
                         );
                     })}
+                    <li key='SelectNone' value='selectNone'  >
+                                <div className="option-list">Select None</div>
+                    </li>
 
                 </ul>
             </div>
