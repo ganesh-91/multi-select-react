@@ -4,7 +4,6 @@ npm-debug*
 /bin
 npm-debug.log
 src/dist/*
-build/*
 src/trackingScript/dist/*
 .vscode/*
 .DS_Store

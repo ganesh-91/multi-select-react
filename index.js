@@ -1,1 +1,1 @@
-module.exports = require("./src/index"); // Exposing src
+module.exports = require("./build/index"); // Exposing Build
