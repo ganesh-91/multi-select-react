@@ -35,7 +35,8 @@ class ReactMultiSelect extends React.Component {
             );
         })
 
-        if(this.props.enableSelectAllorNone){
+        //Don't enable SelectAllorNone when isSingleSelect is true
+        if(this.props.enableSelectAllorNone && !this.props.isSingleSelect){
             optionsList = [<li key='SelectAll' value={selectedCount === optionsList.length}  >
                             <div className="option-list" 
                             style={this.props.disabled ? disabledStyle : (selectedCount === optionsList.length ? (this.props.optionsListStyles || optionsListStyles) : {})}
