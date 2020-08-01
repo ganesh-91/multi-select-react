@@ -1,7 +1,8 @@
 # multi-select-react
 
 ## Description
-A React Component providing multi select functionality.(under development)
+A React Component providing multi select functionality.(under development).
+
 If you like it please drop a star.
 
 ----
