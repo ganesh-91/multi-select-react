@@ -1,0 +1,10 @@
+[
+  {
+    "id": "ac03c0b2-98ff-4341-b221-c8a01f188da6",
+    "text": "About the response code and headers\nEvery request will return an HTTP status code that indicates the success of the response. For more information about response codes, see the MDN HTTP response status code documentation.\n\nAdditionally, the response will include headers that give more details about the response. Headers that start with X- or x- are custom to GitHub. For example, the x-ratelimit-remaining and x-ratelimit-reset headers tell you how many requests you can make in a time period.\n\nTo view the status code and headers, use the --include or --i flag when you send your request.\n\nFor example, this request:",
+    "created": "2022-10-02T22:01:06+05:30",
+    "lastUpdated": "2022-10-02T22:01:07+05:30",
+    "category": "",
+    "favorite": false
+  }
+]
